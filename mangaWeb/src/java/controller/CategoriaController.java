@@ -5,6 +5,7 @@
  */
 package controller;
 
+import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import manga.domain.dao.ICategoriaDAO;
@@ -22,8 +23,8 @@ public class CategoriaController {
             banco= new CategoriaDAOImpl();
     @GET
     @Path("/")
-    public String index(){
-        return "teste";
+    public List<Categoria> index(){
+        return banco.consultar();
     }
     
     @GET
